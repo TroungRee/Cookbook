@@ -10,7 +10,7 @@ router.get("/",function(req,res){
 	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
 });
 
-
+/*
 const myDatabase = require('./myDatabase');
 let db = new myDatabase();
 
@@ -46,5 +46,5 @@ router.delete('/delete/:identifier', function(req, res){
 
 
 
-
+*/
 module.exports = router;   //new
