@@ -3,14 +3,13 @@ var router = express.Router();
 var formidable = require('formidable');
 var mv = require('mv');
 
-var imageInfo = {"name":""};
 
 router.get("/",function(req,res){
-	    res.sendFile(__dirname + "/public/views/index.html");
+    res.sendFile(__dirname + "/public/views/index.html");
 });
 
 router.post("/#recepies",function(req,res){
-	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
+		res.sendFile(path.resolve(__dirname,"public/views/index.html"));
 });
 
 /*
