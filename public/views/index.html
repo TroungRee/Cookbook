@@ -1,196 +1,160 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <title>JavaScript Canvas</title>
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
 
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
 
-  <script type="text/javascript">
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-right w3-padding-16">Mail</div>
+    <div class="w3-center w3-padding-16">My Food</div>
+  </div>
+</div>
 
-      window.addEventListener('load', eventWindowLoaded, false);
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-      function eventWindowLoaded() {
-         canvasApp();
-      }
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
 
-      function Create2DArray(rows) {
-        var arr = [];
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
+      <h3>All I Need Is a Popsicle</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
+      <h3>Salmon For Your Skin</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
+      <h3>Le French</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
 
-        for (var i=0;i<rows;i++) {
-           arr[i] = [];
-        }
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
 
-        return arr;
-      }
+  <hr id="about">
 
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">
+    <h3>About Me, The Food Man</h3><br>
+    <img src="/w3images/chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <div class="w3-padding-32">
+      <h4><b>I am Who I Am!</b></h4>
+      <h6><i>With Passion For Real, Good Food</i></h6>
+      <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    </div>
+  </div>
+  <hr>
 
-      function canvasApp(){
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
 
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li>
+      </ul>
+    </div>
 
-          var theCanvas = document.getElementById("canvas");
-          theCanvas.addEventListener("mousemove",onMouseMove,false);
-          theCanvas.addEventListener("click",onMouseClick,false);
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+      </p>
+    </div>
+  </footer>
 
+<!-- End page content -->
+</div>
 
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
-         if (!theCanvas || !theCanvas.getContext) {
-            return;
-         }
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
-
-         var context = theCanvas.getContext("2d");
-
-         if (!context) {
-            return;
-         }
-
-         //canvasApp level variables
-         var keyPressList = [];
-         var windowWidth = 400;
-         var windowHeight = 400;
-         var mouseX = 0;
-         var mouseY = 0;
-
-
-
-         reset();
-
-         gameLoop();
-
-      ///////////////////////////////////////////////////////
-         function gameLoop(){
-              var FRAME_RATE = 10;
-              var intervalTime = 1000/FRAME_RATE;
-
-              input();
-              paint();
-              animate();
-              window.setTimeout(gameLoop, intervalTime);
-         }
-
-         document.onkeydown = function(e){
-            e = e?e:window.event;
-            keyPressList[e.keyCode] = true;
-         }
-
-         document.onkeyup = function(e){
-            e = e?e:window.event;
-            keyPressList[e.keyCode] = false;
-         };
-
-      ///////////////////////////////////////////////////////
-         function onMouseMove(e){
-
-         }
-         function onMouseClick(e){
-
-         }
-
-         function input(){
-             // Tab:9 Enter:13 Space:32 0:48 A:65 a:97 Delete:127
-             if (keyPressList[27]==true){
-             //Escape
-                 reset();
-             }
-
-             if (keyPressList[37]==true) {
-             //Left arrow
-             }
-
-             if (keyPressList[38]==true) {
-             //Up arrow
-             }
-
-             if (keyPressList[39]==true) {
-             //Right arrow
-             }
-             if (keyPressList[40]==true) {
-             //Down arrow
-             }
-
-         }
-
-         function paint() {
-                // draw background
-                context.fillStyle = '#ffffff';
-                context.fillRect(0, 0, getWidth2(), getHeight2());
-                context.strokeStyle = '#000000';
-                context.strokeRect(0, 0, getWidth2(), getHeight2());
-
-            {
-                context.fillStyle = "rgb(255,0,0)";
-                context.beginPath();
-                context.fillRect(getX(0)+getWidth2()/4,
-                getY(0)+getHeight2()/4,
-                getWidth2()/2,
-                getHeight2()/2);
-                context.closePath();
-            }
-
-            {
-                context.fillStyle = '#000000';
-                context.font = '30px sans-serif';
-                context.textBaseline = 'top';
-                context.fillText  ("Some Text", 50, 50);
-            }
-
-            drawCircle(300,100,0,8,8);
-
-            context.restore();
-         }
-
-         function drawCircle(xpos,ypos,rot,xscale,yscale){
-              context.save(); //save current state in stack
-              context.setTransform(1,0,0,1,0,0);
-
-              context.translate(xpos,ypos);
-              context.rotate(rot);
-              context.scale(xscale,yscale);
-              context.fillStyle = "rgb(0,0,0)";
-
-               context.beginPath();
-               context.arc(0,0,4,0,Math.PI*2,true);
-               context.closePath();
-               context.fill();
-
-
-              context.restore(); //pop old state on to screen
-         }
-
-
-
-         function reset(){
-
-         }
-         function animate(){
-
-         }
-
-      ////////////////////////////////////////////////////////
-         function getX(x){
-           return(x);
-         }
-         function getY(y){
-           return(y);
-         }
-         function getYNormal(y){
-           return(windowHeight-y);
-         }
-         function getWidth2(){
-           return(windowWidth);
-         }
-         function getHeight2(){
-           return(windowHeight);
-         }
-      }
-
-  </script>
-  </head>
-
-
-    <body>
-        <canvas id="canvas" width="400" height="500"  style="position:absolute;top: 50px; left: 50px;">
-         Your browser does not support HTML5 Canvas.
-        </canvas>
-    </body>
-</html
+</body>
+</html>
