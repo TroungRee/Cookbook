@@ -1,52 +1,39 @@
+var express = require("express");
+var router = express.Router();
+var formidable = require('formidable');
+var mv = require('mv');
 
-
-let path = require("path");
-let express = require("express");    //new
-let router = express.Router();      //new
-
+var imageInfo = {"name":""};
 
 router.get("/",function(req,res){
-	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
+	    res.sendFile(__dirname + "/public/views/index.html");
 });
 
 router.post("/#recepies",function(req,res){
 	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
 });
+
 /*
-const myDatabase = require('./myDatabase');
-let db = new myDatabase();
-
-const Student = require('./Student');
-
-router.post('/create', function(req, res){
-	if (req.body.name == "") {
-		res.json({retVal:false});
-		return;
-	}
-	let obj = new Student(req.body.identifier,req.body.name);
-	res.json({retVal:db.postStudent(obj)});
+router.get("/display",function(req,res){
+	    res.sendFile(__dirname + "/public/views/displayImage.html");
 });
 
-
-router.get('/read', function(req, res){
-	res.json({retVal:db.getStudent(req.query.identifier)});
+router.get('/request', function(req, res){
+			res.json(imageInfo);
 });
 
-
-router.put('/update', function(req, res){
-	if (req.body.name == "") {
-		res.json({retVal:false});
-		return;
-	}
-	let obj = new Student(req.body.identifier,req.body.name);
-	res.json({retVal:db.putStudent(obj)});
+router.post('/fileupload', function(req, res){
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+	      var oldpath = files.filetoupload.path;
+	      var newpath = __dirname + '/public/images/' + files.filetoupload.name;
+				imageInfo.name = files.filetoupload.name;
+	      mv(oldpath, newpath, function (err) {
+		        if (err) throw err;
+		        res.write('File uploaded and moved!');
+		        res.end();
+	      });
+    });
 });
-
-router.delete('/delete/:identifier', function(req, res){
-	res.json({retVal:db.deleteStudent(req.params.identifier)});
-});
-
-
-
 */
-module.exports = router;   //new
+module.exports = router;
