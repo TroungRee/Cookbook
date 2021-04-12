@@ -6,10 +6,12 @@ let router = express.Router();      //new
 
 
 router.get("/",function(req,res){
-//	res.sendFile(path.resolve(__dirname + "/public/views/index.html"));  //changed
 	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
 });
 
+router.post("/#recepies",function(req,res){
+	res.sendFile(path.resolve(__dirname,"public/views/index.html"));
+});
 /*
 const myDatabase = require('./myDatabase');
 let db = new myDatabase();
