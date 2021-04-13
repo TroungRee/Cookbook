@@ -8,8 +8,8 @@ router.get("/",function(req,res){
     res.sendFile(__dirname + "/public/html/index.html");
 });
 
-router.post("/recepies",function(req,res){
-		res.sendFile(path.resolve(__dirname,"public/views/index.html"));
+router.get("/recipe",function(req,res){
+		res.sendFile(path.resolve(__dirname,"public/views/recipe.html"));
 });
 
 /*
