@@ -5,7 +5,7 @@ var mv = require('mv');
 
 
 router.get("/",function(req,res){
-    res.sendFile(__dirname + "/public/views/index.html");
+    res.sendFile(__dirname + "/public/html/index.html");
 });
 
 router.post("/recepies",function(req,res){
