@@ -5,19 +5,19 @@ var mv = require('mv');
 
 
 router.get("/",function(req,res){
-    res.sendFile(__dirname + "/public/html/index.html");
+    res.sendFile(__dirname + "/public/html/home.html");
 });
 
 router.get("/home",function(req,res){
-    res.sendFile(__dirname + "/public/html/index.html");
+    res.sendFile(__dirname + "/public/html/home.html");
 });
 
 router.get("/add",function(req,res){
     res.sendFile(__dirname + "/public/html/addRecipe.html");
 });
 
-router.get("/recipe",function(req,res){
-		res.sendFile(__dirname + "/public/html/recipe.html");
+router.get("/myRecipes",function(req,res){
+		res.sendFile(__dirname + "/public/html/myRecipes.html");
 });
 
 const Recipe = require('./Recipe');
