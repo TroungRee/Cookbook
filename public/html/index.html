@@ -18,6 +18,7 @@
   <a href="javascript:void(0)" onclick="closeMenu()" class="w3-bar-item w3-button">Close Menu</a>
   <a href="#food" onclick="closeMenu()" class="w3-bar-item w3-button">Food</a>
   <a href="/recepies" onclick="closeMenu()" class="w3-bar-item w3-button">My Recipes</a>
+  <a href="/add" onclick="closeMenu()" class="w3-bar-item w3-button">Add Recipes</a>
 </nav>
 
 <!-- Top menu -->
@@ -100,11 +101,11 @@
 <script>
     // Script to open and close sidebar
     function openMenu() {
-      document.getElementById("mySidebar").style.display = "block";
+      $("#mySidebar").css("display","block");
     }
 
     function closeMenu() {
-      document.getElementById("mySidebar").style.display = "none";
+      $("#mySidebar").css("display","none");
     }
 
     function previousPage(){

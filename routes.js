@@ -8,17 +8,21 @@ router.get("/",function(req,res){
     res.sendFile(__dirname + "/public/html/index.html");
 });
 
+router.get("/add",function(req,res){
+    res.sendFile(__dirname + "/public/html/addRecipe.html");
+});
+
 router.get("/recipe",function(req,res){
 		res.sendFile(path.resolve(__dirname,"public/views/recipe.html"));
 });
 
 router.post('/create', function(req, res){
-	if (req.body.name == "") {
-		res.json({retVal:false});
-		return;
-	}
-	let obj = new Student(req.body.identifier,req.body.dish,req.body.category,req.body.Recipes,req.body.fileStuff);
-	res.json({retVal:db.postStudent(obj)});
+  	if (req.body.name == "") {
+    		res.json({retVal:false});
+    		return;
+  	}
+  	let obj = new Recipe(req.body.dish,req.body.category,req.body.ingredients,req.body.console.directions,req.body.image);
+  	res.json({retVal:db.postStudent(obj)});
 });
 /*
 router.get("/display",function(req,res){
