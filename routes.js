@@ -16,6 +16,9 @@ router.get("/recipe",function(req,res){
 		res.sendFile(path.resolve(__dirname,"public/views/recipe.html"));
 });
 
+const Recipe = require('./Recipe');
+
+
 router.post('/create', function(req, res){
   	if (req.body.name == "") {
     		res.json({retVal:false});

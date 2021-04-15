@@ -7,4 +7,4 @@ let Recipe = function(dish,category,ingredients,directions,image) {
     this.image = image;
 }
 
-module.exports = Student;
+module.exports = Recipe;
