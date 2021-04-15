@@ -12,6 +12,14 @@ router.get("/recipe",function(req,res){
 		res.sendFile(path.resolve(__dirname,"public/views/recipe.html"));
 });
 
+router.post('/create', function(req, res){
+	if (req.body.name == "") {
+		res.json({retVal:false});
+		return;
+	}
+	let obj = new Student(req.body.identifier,req.body.dish,req.body.category,req.body.Recipes,req.body.fileStuff);
+	res.json({retVal:db.postStudent(obj)});
+});
 /*
 router.get("/display",function(req,res){
 	    res.sendFile(__dirname + "/public/views/displayImage.html");
