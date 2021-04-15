@@ -27,7 +27,7 @@ function addClicked(){
       type: "POST",
       data: {dish:$("#dish").val(),category:$("#category").val(),
              ingredients:$("#ingredients").val(),directions:$("#directions").val(),
-             image:$("#image").val()},
+             image:$("#imageStuff").val()},
       success: function(data){
         if (!data)
           alert("bad create");
@@ -38,7 +38,7 @@ function addClicked(){
         } ,
       dataType: "json"
     });
-  return false;
+    return false;
 }
 /*
 function updateClicked(){

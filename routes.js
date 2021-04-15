@@ -8,12 +8,16 @@ router.get("/",function(req,res){
     res.sendFile(__dirname + "/public/html/index.html");
 });
 
+router.get("/home",function(req,res){
+    res.sendFile(__dirname + "/public/html/index.html");
+});
+
 router.get("/add",function(req,res){
     res.sendFile(__dirname + "/public/html/addRecipe.html");
 });
 
 router.get("/recipe",function(req,res){
-		res.sendFile(path.resolve(__dirname,"public/views/recipe.html"));
+		res.sendFile(__dirname + "/public/html/recipe.html");
 });
 
 const Recipe = require('./Recipe');
