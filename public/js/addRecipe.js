@@ -1,4 +1,4 @@
-
+/*
 function readClicked(){
     $.ajax({
       url: "/read",
@@ -20,6 +20,7 @@ function readClicked(){
     });
   return false;
 }
+*/
 function addClicked(){
     $.ajax({
       url: "/create",
@@ -37,6 +38,7 @@ function addClicked(){
     });
   return false;
 }
+/*
 function updateClicked(){
     $.ajax({
       url: "/update",
@@ -70,9 +72,12 @@ function deleteClicked(){
     });
     return false;
 }
+*/
 $(document).ready(function(){
   $("#addRecipe").click(addClicked);
+  /*
   $("#createButton").click(createClicked);
   $("#updateButton").click(updateClicked);
   $("#deleteButton").click(deleteClicked);
+  */
 });
