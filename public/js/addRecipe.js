@@ -24,7 +24,7 @@ function addClicked(){
     $.ajax({
       url: "/create",
       type: "POST",
-      data: {identifier:$("#identifier").val(),name:$("#name").val(),age:$("#age").val(),grade:$("#grade").val()},
+      data: {identifier:$("#identifier").val(),dish:$("#dish").val(),category:$("#category").val(),Recipes:$("#Recipes").val(),image:$("#fileStuff").val()},
       success: function(data){
         if (!data)
           alert("bad create");
