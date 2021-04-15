@@ -9,18 +9,18 @@ function readClicked(){
           alert("bad read");
         else if (data.retVal) {
           $("#name").val(data.retVal.name);
-          
+
           $("#grade").val(data.retVal.grade);
           $("#age").val(data.retVal.age);
           alert("good read");
         } else
           alert("bad read");
-      } ,     
+      } ,
       dataType: "json"
-    });     
+    });
   return false;
 }
-function createClicked(){
+function addRecipe(){
     $.ajax({
       url: "/create",
       type: "POST",
@@ -32,15 +32,15 @@ function createClicked(){
           alert("good create");
         else
           alert("bad create");
-        } ,     
+        } ,
       dataType: "json"
-    });     
+    });
   return false;
 }
 function updateClicked(){
     $.ajax({
       url: "/update",
-      type: "PUT",            
+      type: "PUT",
       data: {identifier:$("#identifier").val(),name:$("#name").val(),age:$("#age").val(),grade:$("#grade").val()},
       success: function(data){
         if (!data)
@@ -49,30 +49,30 @@ function updateClicked(){
           alert("good update");
         else
           alert("bad update");
-      } ,     
+      } ,
       dataType: "json"
-    });     
+    });
   return false;
 }
 function deleteClicked(){
     $.ajax({
       url: "/delete/" + Number($("#identifier").val()),
       type: "DELETE",
-      success: function(data) { 
+      success: function(data) {
         if (!data)
           alert("bad delete");
         else if (data.retVal)
           alert("good delete");
         else
           alert("bad delete");
-      } ,   
+      } ,
       dataType: "json"
-    });  
-    return false;             
-}      
-$(document).ready(function(){        
-  $("#readButton").click(readClicked);
+    });
+    return false;
+}
+$(document).ready(function(){
+  $("#addRecipe").click(readClicked);
   $("#createButton").click(createClicked);
   $("#updateButton").click(updateClicked);
   $("#deleteButton").click(deleteClicked);
-}); 
+});
