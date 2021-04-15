@@ -20,7 +20,7 @@ function readClicked(){
     });
   return false;
 }
-function addRecipe(){
+function addClicked(){
     $.ajax({
       url: "/create",
       type: "POST",
@@ -71,7 +71,7 @@ function deleteClicked(){
     return false;
 }
 $(document).ready(function(){
-  $("#addRecipe").click(readClicked);
+  $("#addRecipe").click(addClicked);
   $("#createButton").click(createClicked);
   $("#updateButton").click(updateClicked);
   $("#deleteButton").click(deleteClicked);
