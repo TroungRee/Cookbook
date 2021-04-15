@@ -17,15 +17,16 @@ router.get("/recipe",function(req,res){
 });
 
 const Recipe = require('./Recipe');
-
+const myDatabase = require('./myDatabase');
+let db = new myDatabase();
 
 router.post('/create', function(req, res){
   	if (req.body.name == "") {
     		res.json({retVal:false});
     		return;
   	}
-  	let obj = new Recipe(req.body.dish,req.body.category,req.body.ingredients,req.body.console.directions,req.body.image);
-  	res.json({retVal:db.postStudent(obj)});
+  	let obj = new Recipe(req.body.dish,req.body.category,req.body.ingredients,req.body.directions,req.body.image);
+  	res.json({retVal:db.postRecipe(obj)});
 });
 /*
 router.get("/display",function(req,res){
