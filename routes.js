@@ -20,6 +20,13 @@ router.get("/myRecipes",function(req,res){
 		res.sendFile(__dirname + "/public/html/myRecipes.html");
 });
 
+router.get("/show",function(req,res){
+		res.sendFile(__dirname + "/public/html/displayRecipe.html");
+});
+
+
+
+
 const Recipe = require('./Recipe');
 const myDatabase = require('./myDatabase');
 let db = new myDatabase();
@@ -31,6 +38,13 @@ router.post('/create', function(req, res){
   	}
   	let obj = new Recipe(req.body.dish,req.body.category,req.body.ingredients,req.body.directions,req.body.image);
   	res.json({retVal:db.postRecipe(obj)});
+});
+
+
+let retRecipe = new Recipe();
+console.log(retRecipe);
+router.get("/getRecipe",function(req,res){
+    res.json(retRecipe);
 });
 /*
 router.get("/display",function(req,res){
