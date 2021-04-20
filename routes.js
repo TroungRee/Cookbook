@@ -44,17 +44,18 @@ router.post('/create', function(req, res){
 let retRecipe = new Recipe();
 console.log(retRecipe);
 router.get("/getRecipe",function(req,res){
+    retRecipe
     res.json(retRecipe);
 });
-/*
-router.get("/display",function(req,res){
-	    res.sendFile(__dirname + "/public/views/displayImage.html");
-});
 
+router.get("/display",function(req,res){
+	    res.sendFile(__dirname + "/public/html/displayRecipe.html");
+});
+/*
 router.get('/request', function(req, res){
 			res.json(imageInfo);
 });
-
+*/
 router.post('/fileupload', function(req, res){
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -68,5 +69,5 @@ router.post('/fileupload', function(req, res){
 	      });
     });
 });
-*/
+
 module.exports = router;

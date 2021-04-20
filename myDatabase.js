@@ -1,5 +1,5 @@
 
-const MyRecipes = require('./Recipe');
+const Recipe = require('./Recipe');
 
 let myDatabase = function() {
 		this.myRecipes = [];
