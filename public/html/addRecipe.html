@@ -35,15 +35,18 @@
 
 
     <div id="request" style="margin-top:100px">
-      <label>Dish</label>
+      <div class="w3-row-padding w3-padding-16 w3-center" >
+
+      <h3>Dish</h3>
+
       <input id="dish" name="dish" type="text" /><br>
-      <label for="ingredients">Ingredients</label><br>
-      <textarea id="ingredients" name="ingredients" rows="7" cols="20"></textarea>
+       <h3>Ingredients</h3>
+      <textarea id="ingredients" name="ingredients" rows="7" cols="50"></textarea>
       <br>
-      <label for="directions">Directions</label><br>
-      <textarea id="directions" name="directions" rows="7" cols="20"></textarea>
+      <h3>Directions</h3>
+      <textarea id="directions" name="directions" rows="7" cols="50"></textarea>
       <br>
-      <label>Category</label>
+      <h3>Category</h3>
       <select id = "category" name="category">
             <option selected = "selected" value="NA">NA</option>
             <option value = "Breakfast">Breakfast</option>
@@ -54,10 +57,16 @@
             <option value = "Drink">Drink</option>
         </select>
         <br>
+         <br>
+
 
       <input id="imageStuff" type="file" accept="image/*" name="imagetoupload"><br>
+      <br>
 
       <input id="addRecipe" type="button" value="Add Recipe" onclick="location.href='/recipe'">
+    </div>
+
+
     <!--  <input id="createButton" type="button" value="Create" />
       <input id="updateButton" type="button" value="Update" />
       <input id="deleteButton" type="button" value="Delete" />-->
