@@ -1,12 +1,10 @@
-let id=0;
-let Recipe = function(dish,category,ingredients,directions,image) {
-    this.id = id;
+
+let Recipe = function(dish,ingredients,directions,category,image) {
   	this.dish = dish;
-  	this.category = category;
   	this.ingredients = ingredients;
   	this.directions = directions;
+  	this.category = category;
     this.image = image;
-    id++;
 }
 
 module.exports = Recipe;

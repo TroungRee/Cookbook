@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $("form").submit(function(event) {
         console.log("here i am");
-        console.log($("#fileStuff").val());
+        console.log($("#imageStuff").val());
 
-        if ($("#fileStuff").val() == "")
+        if ($("#imageStuff").val() == "")
           return false;
 
     });

@@ -4,7 +4,12 @@ var formidable = require('formidable');
 var mv = require('mv');
 
 
+//var addRecipe = require("/public/js/addRecipe.js");
+//console.log(addRecipe);
 router.get("/",function(req,res){
+
+    //addRecipe.testing();
+
     res.sendFile(__dirname + "/public/html/home.html");
 });
 
@@ -24,21 +29,13 @@ router.get("/show",function(req,res){
 		res.sendFile(__dirname + "/public/html/displayRecipe.html");
 });
 
+router.post("/updateRecipePage",function(req,res){
 
+		res.sendFile(__dirname + "/public/html/displayRecipe.html");
+});
 
 
 const Recipe = require('./Recipe');
-const myDatabase = require('./myDatabase');
-let db = new myDatabase();
-
-router.post('/create', function(req, res){
-  	if (req.body.name == "") {
-    		res.json({retVal:false});
-    		return;
-  	}
-  	let obj = new Recipe(req.body.dish,req.body.category,req.body.ingredients,req.body.directions,req.body.image);
-  	res.json({retVal:db.postRecipe(obj)});
-});
 
 
 let retRecipe = new Recipe();
@@ -56,18 +53,5 @@ router.get('/request', function(req, res){
 			res.json(imageInfo);
 });
 */
-router.post('/fileupload', function(req, res){
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (err, fields, files) {
-	      var oldpath = files.filetoupload.path;
-	      var newpath = __dirname + '/public/images/' + files.filetoupload.name;
-				imageInfo.name = files.filetoupload.name;
-	      mv(oldpath, newpath, function (err) {
-		        if (err) throw err;
-		        res.write('File uploaded and moved!');
-		        res.end();
-	      });
-    });
-});
 
 module.exports = router;

@@ -60,7 +60,7 @@
 
       <img id="image1" src="" height="285" width="380">
 
-      <div class="grid-container" style="margin-top:100px">
+      <div class="grid-container" style="margin-top:100px;max-width:1200px;margin:auto">
           <div class="grid-title">Ingredients</div>
           <div class="grid-title">Directions</div>
 
@@ -89,7 +89,7 @@
 
             $(document).ready(function(){
 
-                $.get("/getIngredients",null,null);
+                $.post("/getIngredients",null,null);
                 {
                 //handle to a newly created list item.
                     var list_item = document.createElement("li");
