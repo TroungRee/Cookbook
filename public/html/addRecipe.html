@@ -33,7 +33,7 @@
     </div>
 
 
-    <form action="fileupload" method="post" enctype="multipart/form-data">
+
         <div id="request" style="margin-top:100px">
           <div class="w3-row-padding w3-padding-16 w3-center" >
 
@@ -59,13 +59,16 @@
             <br>
              <br>
 
+         <form action="fileupload" method="post" enctype="multipart/form-data">
 
-          <input id="imageStuff" type="file" accept="image/*" name="imagetoupload"><br>
-          <br>
+              <input id="imageStuff" type="file" accept="image/*" name="filetoupload"><br>
+              <br>
+              <input id="addRecipe" type="submit" value="Add Recipe" style="font-size:30px" class="button" >
 
-          <input id="addRecipe" type="submit" value="Add Recipe" style="font-size:30px" class="button" >
+        </form>
+<!--onclick="location.href='/myRecipes'"
 
-<!--onclick="location.href='/myRecipes'"-->
+-->
 
 
           <style>
@@ -92,11 +95,11 @@
       <input id="updateButton" type="button" value="Update" />
       <input id="deleteButton" type="button" value="Delete" />-->
       </div>
-    </form>
 
 
 
-    <script src="js/addRecipe.js"></script>
+
+    <!--<script src="../js/uploadFile.js"></script>-->
 
     <script type="text/javascript">
           // Script to open and close sidebar

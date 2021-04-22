@@ -1,7 +1,9 @@
 
 const Recipe = require('./Recipe');
 
-
+let myDatabase = function() {
+	this.recipes = [];
+}
 
 let recipeIndex = 0;
 
@@ -18,21 +20,23 @@ myDatabase.prototype.postRecipe = function(recipe) {
     }
   }
 //	this.recipes[recipeIndex++] = recipe;
-	this.recipes[recipeIndex++] = new Recipe(recipe.dish,recipe.name,recipe.age,recipe.grade);
+	this.recipes[recipeIndex++] = new Recipe(recipe.dish,recipe.ingredients,recipe.directions,recipe.category,recipe.image);
 	return true;
 }
 
-myDatabase.prototype.getRecipe = function(id) {
+myDatabase.prototype.getRecipe = function(dish) {
   for (let i=0;i<this.recipes.length;i++) {
-    if (this.recipes[i] && id == this.recipes[i].dish)
+    if (this.recipes[i] && dish == this.recipes[i].dish)
 		{
 //			return(this.recipes[i]);
-      return(new Recipe(this.recipes[i].dish,this.recipes[i].name,this.recipes[i].age,this.recipes[i].grade));
+      return(new Recipe(this.recipes[i].dish,this.recipes[i].ingredients,this.recipes[i].directions,this.recipes[i].category,this.recipes[i].image));
 		}
   }
 	return null;
 }
 
+
+/*
 myDatabase.prototype.putRecipe = function(recipe) {
   for (let i=0;i<this.recipes.length;i++) {
     if (this.recipes[i] && this.recipes[i].dish == recipe.dish) {
@@ -54,5 +58,5 @@ myDatabase.prototype.deleteRecipe = function(id) {
   }
 	return null;
 }
-
+*/
 module.exports = myDatabase;
