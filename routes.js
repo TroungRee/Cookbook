@@ -70,19 +70,12 @@ router.post('/fileupload', function(req, res){
 
 
 let retRecipe = new Recipe();
-console.log(retRecipe);
+
+
 router.get("/getRecipe",function(req,res){
-    retRecipe
+
     res.json(retRecipe);
 });
 
-router.get("/display",function(req,res){
-	    res.sendFile(__dirname + "/public/html/displayRecipe.html");
-});
-/*
-router.get('/request', function(req, res){
-			res.json(imageInfo);
-});
-*/
 
 module.exports = router;
