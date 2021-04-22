@@ -74,6 +74,12 @@
           </div>
         </div>
 
+
+        <input type="button" onclick="printRecipes()">
+
+
+
+
       <script type="text/javascript">
             // Script to open and close sidebar
             function openMenu() {
@@ -82,6 +88,10 @@
 
             function closeMenu() {
               $("#mySidebar").css("display","none");
+            }
+
+            function printRecipes(){
+                $.post("printRecipes",{dish:"ab"},null);
             }
 
       </script>

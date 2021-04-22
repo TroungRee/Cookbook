@@ -29,16 +29,13 @@ router.get("/show",function(req,res){
 		res.sendFile(__dirname + "/public/html/displayRecipe.html");
 });
 
-router.post("/updateRecipePage",function(req,res){
-
-		res.sendFile(__dirname + "/public/html/displayRecipe.html");
-});
 
 
+const Recipe = require('./Recipe');
 const myDatabase = require('./myDatabase');
 let db = new myDatabase();
 
-const Recipe = require('./Recipe');
+
 
 router.post('/create', function(req, res){
 	if (req.body.name == "") {
@@ -47,12 +44,17 @@ router.post('/create', function(req, res){
 	}
 	let obj = new Recipe(req.body.dish,req.body.ingredients,req.body.directions,req.body.category,req.body.image);
 	res.json({retVal:db.postRecipe(obj)});
-
-
-  console.log(db.displayRecipes(obj));
 });
 
+let retRecipe = new Recipe();
+router.post("/updateRecipe",function(req,res){
+      var tempRecipe = db.getRecipe(req.body.dish);
+      retRecipe = tempRecipe;
+});
 
+router.post("/printRecipes",function(req,res){
+      console.log(db.getRecipe(req.body.dish));
+});
 
 router.post('/fileupload', function(req, res){
     var form = new formidable.IncomingForm();
@@ -61,20 +63,9 @@ router.post('/fileupload', function(req, res){
 	      var newpath = __dirname + '/public/images/' + files.filetoupload.name;
 	      mv(oldpath, newpath, function (err) {
 		        if (err) throw err;
-		        res.write('File uploaded and moved!');
-		        res.end();
-	      });
+            res.sendFile(__dirname + "/public/html/myRecipes.html");
+        });
     });
-});
-
-
-
-let retRecipe = new Recipe();
-
-
-router.get("/getRecipe",function(req,res){
-
-    res.json(retRecipe);
 });
 
 

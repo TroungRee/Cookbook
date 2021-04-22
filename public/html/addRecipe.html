@@ -59,16 +59,14 @@
             <br>
              <br>
 
-         <form action="fileupload" method="post" enctype="multipart/form-data">
+         <form action="fileupload" method="post" enctype="multipart/form-data" id="imageForm">
 
               <input id="imageStuff" type="file" accept="image/*" name="filetoupload"><br>
               <br>
-              <input id="addRecipe" type="submit" value="Add Recipe" style="font-size:30px" class="button" >
+              <input id="addRecipe" type="submit" value="Add Recipe" style="font-size:30px" class="button" onclick="location.href='/myRecipes'">
 
         </form>
-<!--onclick="location.href='/myRecipes'"
 
--->
 
 
           <style>
@@ -99,7 +97,8 @@
 
 
 
-    <!--<script src="../js/uploadFile.js"></script>-->
+    <script src="../js/uploadFile.js"></script>
+    <script src="../js/addRecipe.js"></script>
 
     <script type="text/javascript">
           // Script to open and close sidebar

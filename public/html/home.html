@@ -35,7 +35,7 @@
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food" >
-    <a href="/show"><div class="w3-quarter" id="home1">
+    <a href="/show" onclick="showRecipe('Chicago-Inspired Italian Beef Sandwich')"><div class="w3-quarter" id="home1">
       <img src="public/images/sandwich.jpg" alt="none" style="width:100%;border:30px solid #fff">
       <h3>Chicago-Inspired Italian Beef Sandwich</h3>
       <p>I tried to combine the traditional Italian beef sandwich with the French dip sandwich with a little nod...</p>
@@ -83,7 +83,7 @@
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
     // Script to open and close sidebar
     function openMenu() {
       $("#mySidebar").css("display","block");
@@ -92,6 +92,14 @@
     function closeMenu() {
       $("#mySidebar").css("display","none");
     }
+
+    function showRecipe(dishName){
+        $.post("/updateRecipePage",{dish:dishName},null);
+    }
+
+    $(document).ready(function(){
+        
+    });
 
 
 
