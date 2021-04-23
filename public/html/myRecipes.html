@@ -51,6 +51,10 @@
 
         <!-- First Photo Grid-->
         <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+          <a href="" onclick="showRecipe('')" id="link0"><div class="w3-quarter">
+            <img src="" alt="none" style="width:100%;border:30px solid #fff" id="image0">
+            <h3 id="title0">Add Your Recipe</h3>
+          </div></a>
           <a href="" onclick="showRecipe('')" id="link1"><div class="w3-quarter">
             <img src="" alt="none" style="width:100%;border:30px solid #fff" id="image1">
             <h3 id="title1">Add Your Recipe</h3>
@@ -62,10 +66,6 @@
           <a href="" onclick="showRecipe('')" id="link3"><div class="w3-quarter">
             <img src="" alt="none" style="width:100%;border:30px solid #fff" id="image3">
             <h3 id="title3">Add Your Recipe</h3>
-          </div></a>
-          <a href="" onclick="showRecipe('')" id="link4"><div class="w3-quarter">
-            <img src="" alt="none" style="width:100%;border:30px solid #fff" id="image4">
-            <h3 id="title4">Add Your Recipe</h3>
           </div></a>
         </div>
 
@@ -81,13 +81,17 @@
               $("#mySidebar").css("display","none");
             }
             $(document).ready(function(){
-                for(let i=1;i<5;i++){
+                for(let i=0;i<4;i++){
                   $.post("/updateMyRecipes",{index:i},function(data){
                       $("#title"+i).text(data.dish);
                       $("#link"+i).attr("onclick","showRecipe('"+data.dish+"')");
                       $("#link"+i).attr("href","/show");
 
-                      if(i==1){
+                      if(i==0){
+                        image0.src = data.image;
+                        console.log("here0");
+                      }
+                      else if(i==1){
                         image1.src = data.image;
                         console.log("here1");
                       }
@@ -98,10 +102,6 @@
                       else if(i==3){
                         image3.src = data.image;
                         console.log("here3");
-                      }
-                      else if(i==4){
-                        image4.src = data.image;
-                        console.log("here4");
                       }
                   });
                 }
