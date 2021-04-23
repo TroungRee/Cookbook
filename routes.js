@@ -63,7 +63,7 @@ router.post('/clientCreate', function(req, res){
 
 
 router.post("/updateServerRecipe",function(req,res){
-      recipeInfo = serverDb.getRecipe(req.body.dish);
+      recipeInfo = serverDb.getRecipeByName(req.body.dish);
       recipeInfo.image = '/public/images/' + recipeInfo.image;
 });
 
