@@ -35,28 +35,4 @@ myDatabase.prototype.getRecipe = function(dish) {
 	return null;
 }
 
-
-/*
-myDatabase.prototype.putRecipe = function(recipe) {
-  for (let i=0;i<this.recipes.length;i++) {
-    if (this.recipes[i] && this.recipes[i].dish == recipe.dish) {
-//			this.recipes[i] = recipe;
-      this.recipes[i] = new Recipe(recipe.dish,recipe.name,recipe.age,recipe.grade);
-      return true;
-    }
-  }
-  return false;
-}
-
-myDatabase.prototype.deleteRecipe = function(id) {
-  for (let i=0;i<this.recipes.length;i++) {
-    if (this.recipes[i] && id == this.recipes[i].dish) {
-			  let tempPtr = this.recipes[i];
-        this.recipes[i] = undefined;
-				return tempPtr;
-    }
-  }
-	return null;
-}
-*/
 module.exports = myDatabase;

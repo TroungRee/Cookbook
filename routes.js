@@ -38,7 +38,7 @@ let db = new myDatabase();
 
 
 router.post('/create', function(req, res){
-	if (req.body.name == "") {
+	if (req.body.dish == "") {
 		res.json({retVal:false});
 		return;
 	}
@@ -63,7 +63,6 @@ router.post('/fileupload', function(req, res){
 	      var newpath = __dirname + '/public/images/' + files.filetoupload.name;
 	      mv(oldpath, newpath, function (err) {
 		        if (err) throw err;
-            res.sendFile(__dirname + "/public/html/myRecipes.html");
         });
     });
 });

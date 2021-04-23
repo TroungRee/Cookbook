@@ -1,28 +1,12 @@
-function readClicked(){
-    $.ajax({
-      url: "/read",
-      type: "GET",
-      data: {identifier:$("#identifier").val()},
-      success: function(data){
-        if (!data)
-          alert("bad read");
-        else if (data.retVal) {
-          $("#name").val(data.retVal.name);
-          alert("good read");
-        } else
-          alert("bad read");
-      } ,
-      dataType: "json"
-    });
-  return false;
-}
+
 function createClicked(){
+
     $.ajax({
       url: "/create",
       type: "POST",
       data: {dish:$("#dish").val(),ingredients:$("#ingredients").val(),
              directions:$("#directions").val(),category:$("#category").val(),
-             imageStuff:$("#imageStuff").attr('src')},
+             image:$("#imageStuff").val().substring(12)},
       success: function(data){
         if (!data)
           alert("bad create");
@@ -38,6 +22,5 @@ function createClicked(){
 
 
 $(document).ready(function(){
-  $("#readButton").click(readClicked);
   $("#addRecipe").click(createClicked);
 });

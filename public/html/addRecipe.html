@@ -40,7 +40,7 @@
           <h3>Dish</h3>
 
           <input id="dish" name="dish" type="text" /><br>
-           <h3>Ingredients</h3>
+          <h3>Ingredients</h3>
           <textarea id="ingredients" name="ingredients" rows="7" cols="50"></textarea>
           <br>
           <h3>Directions</h3>
@@ -55,19 +55,17 @@
                 <option value = "Dessert">Dessert</option>
                 <option value = "Snack">Snack</option>
                 <option value = "Drink">Drink</option>
-            </select>
-            <br>
-             <br>
+          </select>
+          <br>
+          <br>
 
-         <form action="fileupload" method="post" enctype="multipart/form-data" id="imageForm">
+          <form action="fileupload" method="post" enctype="multipart/form-data" id="imageForm">
+              <input id="imageStuff" type="file" accept="image/*" name="filetoupload">
+              <input type="submit" name="uploadImage" value="Upload Image">
+          </form>
 
-              <input id="imageStuff" type="file" accept="image/*" name="filetoupload"><br>
-              <br>
-              <input id="addRecipe" type="submit" value="Add Recipe" style="font-size:30px" class="button" onclick="location.href='/myRecipes'">
-
-        </form>
-
-
+        <br>
+        <input id="addRecipe" type="button" value="Add Recipe" style="font-size:30px" class="button" onclick="location.href='/myRecipes'">
 
           <style>
               .button {
