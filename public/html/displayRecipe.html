@@ -53,21 +53,22 @@
         </div>
       </div>
 
+<br><br><br><br><br>
 
-      <div id="request" style="margin-top:500px">
-    	   <input id="image2Button" type="button" value="Image2" />
-      </div>
 
-      <img id="image1" src="" height="285" width="380">
-
-      <div class="grid-container" style="margin-top:100px;max-width:1200px;margin:auto">
+        <img id="image" src="" height="350" width="350">
+        <h1 id="title"></h1>
+        <h3 id="category"></h3>
+      <div class="grid-container" style="max-width:1200px;margin:auto">
           <div class="grid-title">Ingredients</div>
           <div class="grid-title">Directions</div>
 
           <div class="grid-item">
-            <ul id="ingredients"></ul>
+            <p id="ingredients"></p>
           </div>
-          <div class="grid-item">4</div>
+          <div class="grid-item">
+            <p id=directions></p>
+          </div>
           <!--
           <div class="grid-item">5</div>
           <div class="grid-item">6</div>
@@ -88,6 +89,16 @@
             }
 
             $(document).ready(function(){
+
+              $.post("/updateRecipePage",null, function(data){
+                  $("#title").text(data.dish);
+                  $("#ingredients").text(data.ingredients);
+                  $("#directions").text(data.directions);
+                  $("#category").text(data.category);
+                  image.src = data.image;
+              });
+
+
 /*
                 $.post("/getRecipe",null,function(data){
                   //handle to a newly created list item.

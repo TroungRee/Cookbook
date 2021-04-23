@@ -35,53 +35,26 @@
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food" >
-    <a href="/show" onclick="showRecipe('Chicago-Inspired Italian Beef Sandwich')"><div class="w3-quarter" id="home1">
-      <img src="public/images/sandwich.jpg" alt="none" style="width:100%;border:30px solid #fff">
-      <h3>Chicago-Inspired Italian Beef Sandwich</h3>
-      <p>I tried to combine the traditional Italian beef sandwich with the French dip sandwich with a little nod...</p>
+    <a href="/show" onclick="showRecipe('Tuna Casserole')"><div class="w3-quarter" id="home1">
+      <img src="public/images/Tuna Casserole.jpg" alt="none" style="width:100%;border:30px solid #fff">
+      <h3>Tuna Casserole</h3>
     </div></a>
     <a href="/show"><div class="w3-quarter" id="home2">
       <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
       <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
     </div></a>
     <a href="/show"><div class="w3-quarter" id="home3">
       <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
       <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
     </div></a>
     <a href="/show"><div class="w3-quarter" id="home4">
       <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
       <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
     </div></a>
   </div>
 
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <a href="/show"><div class="w3-quarter" id="home5">
-      <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-      <h3><a href="/show">All I Need Is a Popsicle</a></h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div></a>
-    <a href="/show"><div class="w3-quarter" id="home6">
-      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div></a>
-    <a href="/show"><div class="w3-quarter" id="home7">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div></a>
-    <a href="/show"><div class="w3-quarter" id="home8">
-      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div></a>
-  </div>
-</div>
+<script src="../js/ourRecipes.js"></script>
+
 
 <script type="text/javascript">
     // Script to open and close sidebar
@@ -94,14 +67,8 @@
     }
 
     function showRecipe(dishName){
-        $.post("/updateRecipePage",{dish:dishName},null);
+        $.post("/updateServerRecipe",{dish:dishName},null);
     }
-
-    $(document).ready(function(){
-        
-    });
-
-
 
 </script>
 

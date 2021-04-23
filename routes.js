@@ -5,6 +5,7 @@ var mv = require('mv');
 
 
 
+
 //var addRecipe = require("/public/js/addRecipe.js");
 //console.log(addRecipe);
 router.get("/",function(req,res){
@@ -34,27 +35,58 @@ router.get("/show",function(req,res){
 const Recipe = require('./Recipe');
 const myDatabase = require('./myDatabase');
 let db = new myDatabase();
+let serverDb = new myDatabase();
+var recipeInfo = {};
 
 
 
-router.post('/create', function(req, res){
+
+//server
+router.post('/serverCreate', function(req, res){
 	if (req.body.dish == "") {
 		res.json({retVal:false});
 		return;
 	}
-	let obj = new Recipe(req.body.dish,req.body.ingredients,req.body.directions,req.body.category,req.body.image);
+	let obj = new Recipe(req.body.dish,req.body.ingredients,req.body.directions,req.body.category,req.body.image,req.body.index);
+	res.json({retVal:serverDb.postRecipe(obj)});
+});
+
+//client
+router.post('/clientCreate', function(req, res){
+	if (req.body.dish == "") {
+		res.json({retVal:false});
+		return;
+	}
+	let obj = new Recipe(req.body.dish,req.body.ingredients,req.body.directions,req.body.category,req.body.image,req.body.index);
 	res.json({retVal:db.postRecipe(obj)});
 });
 
-let retRecipe = new Recipe();
-router.post("/updateRecipe",function(req,res){
-      var tempRecipe = db.getRecipe(req.body.dish);
-      retRecipe = tempRecipe;
+
+router.post("/updateServerRecipe",function(req,res){
+      recipeInfo = serverDb.getRecipe(req.body.dish);
+      recipeInfo.image = '/public/images/' + recipeInfo.image;
 });
 
-router.post("/printRecipes",function(req,res){
-      console.log(db.getRecipe(req.body.dish));
+
+router.post("/updateClientRecipe",function(req,res){
+      recipeInfo = db.getRecipeByName(req.body.dish);
+      recipeInfo.image = '/public/images/' + recipeInfo.image;
 });
+
+router.post("/updateRecipePage",function(req,res){
+      res.json(recipeInfo);
+});
+
+
+let retRecipe = new Recipe();
+router.post("/updateMyRecipes",function(req,res){
+      retRecipe = db.getRecipeByIndex(req.body.index);
+      if(retRecipe == null) return;
+      retRecipe.image = '/public/images/' + retRecipe.image;
+      res.json(retRecipe);
+});
+
+
 
 router.post('/fileupload', function(req, res){
     var form = new formidable.IncomingForm();
