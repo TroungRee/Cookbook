@@ -81,7 +81,6 @@ router.post("/updateRecipePage",function(req,res){
 let retRecipe = new Recipe();
 router.post("/updateMyRecipes",function(req,res){
       retRecipe = db.getRecipeByIndex(req.body.index);
-      console.log(retRecipe);
       if(retRecipe == null) return;
       retRecipe.image = '/public/images/' + retRecipe.image;
       res.json(retRecipe);
